@@ -31,7 +31,6 @@ const SidebarLink = ({
   isCollapsed,
 }: SidebarLinkProps) => {
   const pathname = usePathname();
-  console.log(99, pathname, href);
   const isActive =
     pathname === href || (pathname === "/" && href === "/projects");
 

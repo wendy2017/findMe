@@ -11,11 +11,12 @@ import { EChartsType } from "echarts/core";
 import echarts, { MyChartRef, MyChartProps } from "./echarts.config";
 
 const FindmeEchart: React.ForwardRefRenderFunction<MyChartRef, MyChartProps> = (
-  { option, width, height = false, onClick },
+  { chartType, mapConfig, option, width, height = false, onClick, onBrushEnd },
   ref: ForwardedRef<MyChartRef>
 ) => {
   const cRef = useRef<HTMLDivElement>(null);
   const cInstance = useRef<EChartsType>();
+
   // 初始化注册组件，监听 cRef 和 option 变化
   useEffect(() => {
     if (cRef.current) {
@@ -29,12 +30,25 @@ const FindmeEchart: React.ForwardRefRenderFunction<MyChartRef, MyChartProps> = (
           const ec = event as any;
           if (ec && onClick) onClick(ec);
         });
+        cInstance.current.on("brushEnd", (event) => {
+          const ec = event as any;
+          if (ec && onBrushEnd) onBrushEnd(ec);
+        });
       }
       console.log(option);
       // 设置配置项
-      if (option) cInstance.current?.setOption(option);
+      // if (chartType == "map") {
+      //   console.log(999922, chartType, geoJson);
+      //   echarts.registerMap("china", geoJson);
+      // }
+      if (chartType === "map" && mapConfig) {
+        echarts.registerMap(mapConfig?.mapName, mapConfig?.geoJson);
+      }
+      if (option) {
+        cInstance.current.setOption(option);
+      }
     }
-  }, [cRef, option]);
+  }, [cRef, option, mapConfig, chartType]);
   // 监听窗口大小变化重绘
   useEffect(() => {
     window.addEventListener("resize", resize);
