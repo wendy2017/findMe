@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 //Importing RainbowKit
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,7 +17,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+
 import { projectsSources } from "./constants";
+import { Item } from "@radix-ui/react-navigation-menu";
 
 export default function NavBar() {
   const [mounted, setMounted] = useState(false);
@@ -34,36 +38,19 @@ export default function NavBar() {
         <Link href="/" target="_self" className="py-4 pr-4">
           <Image src="/logo.png" alt="logo" width={60} height={60} />
         </Link>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Link href={"/web3/nftMarketplace"}>MoodDoll Market</Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-100 gap-3 p-4 ">
-                  {projectsSources.map((item) => (
-                    <li key={item.name}>
-                      <NavigationMenuLink
-                        asChild
-                        className={navigationMenuTriggerStyle({
-                          className: "w-full",
-                        })}
-                      >
-                        <Link href={item.url} target="_self">
-                          {item.name}
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                  {/* <li v-for="component in components" :key="component.title">
-              dd
-            </li> */}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+
+        <Menu>
+          <MenuButton className="mx-4">
+            MoodDoll Market <ChevronDownIcon />
+          </MenuButton>
+          <MenuList>
+            {projectsSources.map((item) => (
+              <MenuItem>
+                <Link href={item.url}>{item.name}</Link>
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
         <div className="md:flex items-center space-x-6">
           <ConnectButton />
         </div>

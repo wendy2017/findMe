@@ -14,6 +14,11 @@ const projectsSources: ProjectItemType[] = [
     description: "my mooddolls",
     url: "/web3/nftMarketplace/mine",
   },
+  {
+    name: "Sell",
+    description: "sell mooddolls",
+    url: "/web3/nftMarketplace/sell",
+  },
 ];
 
 export { projectsSources };

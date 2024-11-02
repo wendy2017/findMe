@@ -13,7 +13,8 @@ import { logError } from "@/utils/errorUtil";
 const useWriteContract = () => {
   const { address } = useAccount();
   const client = useWalletClient()?.data;
-  const { getCatsOffersForMarket, getUserCats } = useReadContract();
+  const { getCatsOffersForMarket, getUserCats, getCatsWithoutOffer } =
+    useReadContract();
   const { awaitTransactionReceipt } = useTransactionReceipt();
   const notify = useNotify();
   const [loading, setLoading] = useState<boolean>(false);
@@ -125,11 +126,68 @@ const useWriteContract = () => {
       setLoading(false);
     }
   };
+  const sellCat = async (price: bigint, id: number): Promise<void> => {
+    if (!marketplaceInstance?.write.setOffer) return;
+
+    setLoading(true);
+    try {
+      const hash: `0x${string}` = await marketplaceInstance.write.setOffer([
+        price,
+        id,
+      ]);
+      await awaitTransactionReceipt({ hash });
+      const msg = <>Your cat offer has been added to the marketplace!</>;
+      notify({
+        title: "Offer Successful",
+        message: msg,
+        status: "success",
+      });
+      getCatsWithoutOffer();
+    } catch (error: unknown) {
+      const msg = logError(error);
+      notify({
+        title: "An error occured",
+        message: msg ?? "An unexpected error occured while setting the offer.",
+        status: "error",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+  const approveNft = async (): Promise<void> => {
+    if (!catInstance?.write.setApprovalForAll) return;
+
+    setLoading(true);
+    try {
+      const hash: `0x${string}` = await catInstance.write.setApprovalForAll([
+        contracts.marketplace.address,
+        true,
+      ]);
+      await awaitTransactionReceipt({ hash });
+      notify({
+        title: "NFT Approval set",
+        message: "Allowance successfully set.",
+        status: "success",
+      });
+    } catch (error: unknown) {
+      notify({
+        title: "NFT Approval denied",
+        message:
+          "Something went wrong while setting the allowance. Please try again.",
+        status: "error",
+      });
+      logError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return {
     loading,
     cancelOffer,
     buyOffer,
     mintCat,
+    sellCat,
+    approveNft,
   };
 };
 export default useWriteContract;

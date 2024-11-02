@@ -11,9 +11,10 @@ import Header from "@/app/(components)/Header";
 import { useStore } from "@/store/moodDollStore";
 import { useReadContract, useWriteContract } from "@/hooks";
 import Loading from "@/app/(components)/Loading";
+import NotConnected from "@/app/(components)/NotConnected";
 
 const NftMarketplace = () => {
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const { catsOffersForMarket } = useStore();
   const { getCatsOffersForMarket } = useReadContract();
   const { cancelOffer, buyOffer, loading } = useWriteContract();
@@ -37,6 +38,7 @@ const NftMarketplace = () => {
         description="Display all the mood dools that are currently for sale."
       />
       {!catsOffersForMarket && <Loading />}
+      {!isConnected && <NotConnected />}
       {catsOffersForMarket?.length == 0 ? (
         <EmptyCard />
       ) : (

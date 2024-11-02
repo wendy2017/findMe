@@ -142,12 +142,31 @@ const useReadContract = () => {
     }
   }, [userCats, marketplaceInstance, setCatsWithoutOffer]);
 
+  const checkNftAllowance = useCallback(
+    async (user: `0x${string}`) => {
+      if (!catInstance?.read.isApprovedForAll) return;
+
+      try {
+        const allowance = await catInstance.read.isApprovedForAll([
+          user,
+          contracts.marketplace.address,
+        ]);
+        return allowance;
+      } catch (error: unknown) {
+        logError(error);
+        return false;
+      }
+    },
+    [catInstance]
+  );
+
   return {
     getCatsOffersForMarket,
     getGen0Count,
     getMaxGen0Supply,
     getUserCats,
     getCatsWithoutOffer,
+    checkNftAllowance,
   };
 };
 
