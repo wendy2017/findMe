@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import commonjs from "rollup-plugin-commonjs";
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -11,7 +13,14 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.externals.push("pino-pretty", "encoding");
+    // config.externals.push("pino-pretty", "encoding");
+    // config.plugins.push(
+    //   commonjs({
+    //     exclude: ["node_modules/pino-pretty/**"],
+    //   })
+    // );
+    config.externals.push("pino-pretty");
+    config.externals.push("encoding");
     return config;
   },
 };
