@@ -36,16 +36,17 @@ type ProjectItemType = {
 };
 
 type DNA = {
-  // headColor: number;
-  // mouthColor: number;
-  // pawsColor: number;
-  // eyesColor: number;
-  // collarColor: number;
-  eyesShape: number;
-  foreheadShape: number;
-  decorationColor: number;
-  animation: number;
-  backgroundColor: number;
+  // headColor?: number;
+  // mouthColor?: number;
+  // pawsColor?: number;
+  // eyesColor?: number;
+  // collarColor?: number;
+
+  // eyesShape?: number;
+  // foreheadShape?: number;
+  // decorationColor?: number;
+  // animation?: number;
+  backgroundColor?: number;
 
   eyePupilColor: number;
   eyePupilBeforeColor: number;
@@ -117,18 +118,18 @@ type RenderCatInfoProps = {
   isFactory: boolean;
 };
 
-type DNA = {
-  headColor: number;
-  mouthColor: number;
-  pawsColor: number;
-  eyesColor: number;
-  collarColor: number;
-  eyesShape: number;
-  foreheadShape: number;
-  decorationColor: number;
-  animation: number;
-  backgroundColor: number;
-};
+// type DNA = {
+//   headColor: number;
+//   mouthColor: number;
+//   pawsColor: number;
+//   eyesColor: number;
+//   collarColor: number;
+//   eyesShape: number;
+//   foreheadShape: number;
+//   decorationColor: number;
+//   animation: number;
+//   backgroundColor: number;
+// };
 
 type AttributesProps = {
   dna: DNA;

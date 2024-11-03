@@ -15,10 +15,10 @@ export const defaultDNA: DNA = {
   footColor: 79,
 
   //Cattributes
-  eyesShape: 1,
-  foreheadShape: 2,
-  decorationColor: 90,
-  animation: 1,
+  // eyesShape: 1,
+  // foreheadShape: 2,
+  // decorationColor: 90,
+  // animation: 1,
   backgroundColor: 1,
 };
 

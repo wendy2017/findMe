@@ -30,10 +30,10 @@ export const useCatFactory = () => {
       legColor: Math.floor(Math.random() * 89) + 10,
       footColor: Math.floor(Math.random() * 89) + 10,
 
-      eyesShape: Math.floor(Math.random() * 6) + 1,
-      foreheadShape: Math.floor(Math.random() * 5) + 1,
-      decorationColor: Math.floor(Math.random() * 89) + 10,
-      animation: Math.floor(Math.random() * 6) + 1,
+      // eyesShape: Math.floor(Math.random() * 6) + 1,
+      // foreheadShape: Math.floor(Math.random() * 5) + 1,
+      // decorationColor: Math.floor(Math.random() * 89) + 10,
+      // animation: Math.floor(Math.random() * 6) + 1,
       backgroundColor: Math.floor(Math.random() * 4) + 1,
     };
     setDna(randomDNA);

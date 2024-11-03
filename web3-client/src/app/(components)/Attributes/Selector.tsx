@@ -15,7 +15,7 @@ const Selector: FC<SelectorProps> = ({
       <label htmlFor="formControlRange">
         <b>{name}</b>
         <Badge colorScheme="purple" ml={2}>
-          Code: {badge ?? idCode}
+          Code: {badge ?? !idCode}
         </Badge>
       </label>
       <input

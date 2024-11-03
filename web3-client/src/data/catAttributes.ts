@@ -47,29 +47,29 @@ export const colorAttributes = [
 ];
 
 export const catAttributes = [
-  {
-    colorName: "eyesShape",
-    name: "Eyes shape",
-    range: SHAPE_RANGE_6,
-    badge: getEyesBadge,
-  },
-  {
-    colorName: "foreheadShape",
-    name: "Forehead shape",
-    range: SHAPE_RANGE_5,
-    badge: getShapeBadge,
-  },
-  {
-    colorName: "decorationColor",
-    name: "Forehead's color",
-    range: COLOR_RANGE,
-  },
-  {
-    colorName: "animation",
-    name: "Animation",
-    range: SHAPE_RANGE_6,
-    badge: getAnimBadge,
-  },
+  // {
+  //   colorName: "eyesShape",
+  //   name: "Eyes shape",
+  //   range: SHAPE_RANGE_6,
+  //   badge: getEyesBadge,
+  // },
+  // {
+  //   colorName: "foreheadShape",
+  //   name: "Forehead shape",
+  //   range: SHAPE_RANGE_5,
+  //   badge: getShapeBadge,
+  // },
+  // {
+  //   colorName: "decorationColor",
+  //   name: "Forehead's color",
+  //   range: COLOR_RANGE,
+  // },
+  // {
+  //   colorName: "animation",
+  //   name: "Animation",
+  //   range: SHAPE_RANGE_6,
+  //   badge: getAnimBadge,
+  // },
   {
     colorName: "backgroundColor",
     name: "Background",

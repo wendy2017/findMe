@@ -29,7 +29,7 @@ const Attributes: FC<AttributesProps> = ({ dna, updateDna }) => {
           action={handleColorChange}
           name={attr.name}
           range={attr.range}
-          idCode={dna[attr.colorName as keyof DNA]}
+          idCode={dna[attr.colorName as keyof DNA] ?? 0}
         />
       )),
     [dna, handleColorChange]
@@ -44,10 +44,10 @@ const Attributes: FC<AttributesProps> = ({ dna, updateDna }) => {
           action={handleColorChange}
           name={attr.name}
           range={attr.range}
-          idCode={dna[attr.colorName as keyof DNA]}
+          idCode={dna[attr.colorName as keyof DNA] || ""}
           badge={
             attr.badge
-              ? attr.badge(dna[attr.colorName as keyof DNA])
+              ? attr.badge(dna[attr.colorName as keyof DNA] ?? 0)
               : undefined
           }
         />
@@ -65,13 +65,13 @@ const Attributes: FC<AttributesProps> = ({ dna, updateDna }) => {
         >
           Dog Colors
         </Button>
-        {/* <Button
+        <Button
           colorScheme="blue"
           variant={!isColorTab ? "solid" : "ghost"}
           onClick={() => toogleTab()}
         >
-          Cattributes
-        </Button> */}
+          Dog tributes
+        </Button>
       </HStack>
       <Box textAlign="center">
         {isColorTab ? colorSelectors : cattributeSelectors}

@@ -6,7 +6,6 @@ import { useAnimation } from "@/hooks/useAnimation";
 import styles from "./styles.module.css";
 import { getBgColorString, getColorString } from "@/utils/catsUtils";
 
-import { CatBody, CatEars, CatEyes, CatForehead, CatHairs } from "./CatParts";
 import RenderCatInfo from "./RenderCatInfo";
 import { DogHead, DogBody } from "./DogParts";
 
@@ -14,9 +13,9 @@ const getColor = (color: number) => `#${getColorString(color)}`;
 
 const RenderCat: FC<RenderCatProps> = ({ dna, id, generation, isFactory }) => {
   const {
-    foreheadShape,
-    eyesShape,
-    animation,
+    // foreheadShape,
+    // eyesShape,
+    // animation,
     backgroundColor,
     eyePupilColor,
     eyePupilBeforeColor,
@@ -27,11 +26,11 @@ const RenderCat: FC<RenderCatProps> = ({ dna, id, generation, isFactory }) => {
     footColor,
   } = dna || {};
 
-  const { catAnimation } = useAnimation(animation);
+  // const { catAnimation } = useAnimation(animation ?? 0);
 
   return (
     <Card
-      bgImage={getBgColorString(backgroundColor)}
+      bgImage={getBgColorString(backgroundColor ?? 0)}
       borderRadius="10"
       w={!isFactory ? "210px" : undefined}
       h={!isFactory ? "330px" : undefined}
@@ -39,11 +38,11 @@ const RenderCat: FC<RenderCatProps> = ({ dna, id, generation, isFactory }) => {
     >
       <Box className={isFactory ? styles.cat : styles.catShow} m="auto">
         <Box
-          className={
-            animation === 2 || animation === 6
-              ? `${styles.head} ${catAnimation.head}`
-              : styles.head
-          }
+        // className={
+        //   animation === 2 || animation === 6
+        //     ? `${styles.head} ${catAnimation.head}`
+        //     : styles.head
+        // }
         >
           {/* <section
             className={styles.head_background}

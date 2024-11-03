@@ -9,15 +9,15 @@ interface DNAProps {
     pawsColor: number;
     eyesColor: number;
     collarColor: number;
-    eyesShape: number;
-    foreheadShape: number;
-    decorationColor: number;
-    animation: number;
+    // eyesShape: number;
+    // foreheadShape: number;
+    // decorationColor: number;
+    // animation: number;
     backgroundColor: number;
   };
 }
 
-const DnaText: FC<DNAProps> = ({ dna }) => {
+const DnaText: FC<any> = ({ dna }) => {
   const dnaString = Object.values(dna).join(" ");
 
   return (

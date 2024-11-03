@@ -43,12 +43,13 @@ export const catDna = (dnaBN: bigint): DNA => {
       legColor: Number(dnaStr.substring(10, 12)),
       footColor: Number(dnaStr.substring(12, 14)),
       //Cattributes
-      eyesShape: Number(dnaStr.substring(10, 11)),
-      foreheadShape: Number(dnaStr.substring(11, 12)),
-      decorationColor: Number(dnaStr.substring(12, 14)),
-      animation: Number(dnaStr.substring(14, 15)),
+      // eyesShape: Number(dnaStr.substring(10, 11)),
+      // foreheadShape: Number(dnaStr.substring(11, 12)),
+      // decorationColor: Number(dnaStr.substring(12, 14)),
+      // animation: Number(dnaStr.substring(14, 15)),
       backgroundColor: Number(dnaStr.substring(15, 16)),
     };
     return dna;
   }
+  return {} as DNA;
 };
