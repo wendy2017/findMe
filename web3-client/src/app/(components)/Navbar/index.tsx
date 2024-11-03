@@ -8,18 +8,8 @@ import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 
 import { projectsSources } from "./constants";
-import { Item } from "@radix-ui/react-navigation-menu";
 
 export default function NavBar() {
   const [mounted, setMounted] = useState(false);
@@ -45,7 +35,7 @@ export default function NavBar() {
           </MenuButton>
           <MenuList>
             {projectsSources.map((item) => (
-              <MenuItem>
+              <MenuItem key={item.key}>
                 <Link href={item.url}>{item.name}</Link>
               </MenuItem>
             ))}

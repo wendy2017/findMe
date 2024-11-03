@@ -29,6 +29,7 @@ type CatAnimation = {
 };
 
 type ProjectItemType = {
+  key?: string;
   name: string;
   description: string;
   url: string;
