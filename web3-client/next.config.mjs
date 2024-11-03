@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-import commonjs from "rollup-plugin-commonjs";
 
 const nextConfig = {
   images: {
