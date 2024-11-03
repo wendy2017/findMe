@@ -29,11 +29,19 @@ export const catDna = (dnaBN: bigint): DNA => {
     const dnaStr = dnaBN.toString();
     const dna: DNA = {
       //Colors
-      headColor: Number(dnaStr.substring(0, 2)),
-      mouthColor: Number(dnaStr.substring(2, 4)),
-      pawsColor: Number(dnaStr.substring(4, 6)),
-      eyesColor: Number(dnaStr.substring(6, 8)),
-      collarColor: Number(dnaStr.substring(8, 10)),
+      // headColor: Number(dnaStr.substring(0, 2)),
+      // mouthColor: Number(dnaStr.substring(2, 4)),
+      // pawsColor: Number(dnaStr.substring(4, 6)),
+      // eyesColor: Number(dnaStr.substring(6, 8)),
+      // collarColor: Number(dnaStr.substring(8, 10)),
+
+      eyePupilColor: Number(dnaStr.substring(0, 2)),
+      eyePupilBeforeColor: Number(dnaStr.substring(2, 4)),
+      birthmarkColor: Number(dnaStr.substring(4, 6)),
+      earColor: Number(dnaStr.substring(6, 8)),
+      mouthToungueColor: Number(dnaStr.substring(8, 10)),
+      legColor: Number(dnaStr.substring(10, 12)),
+      footColor: Number(dnaStr.substring(12, 14)),
       //Cattributes
       eyesShape: Number(dnaStr.substring(10, 11)),
       foreheadShape: Number(dnaStr.substring(11, 12)),

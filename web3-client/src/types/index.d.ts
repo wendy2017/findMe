@@ -35,16 +35,24 @@ type ProjectItemType = {
 };
 
 type DNA = {
-  headColor: number;
-  mouthColor: number;
-  pawsColor: number;
-  eyesColor: number;
-  collarColor: number;
+  // headColor: number;
+  // mouthColor: number;
+  // pawsColor: number;
+  // eyesColor: number;
+  // collarColor: number;
   eyesShape: number;
   foreheadShape: number;
   decorationColor: number;
   animation: number;
   backgroundColor: number;
+
+  eyePupilColor: number;
+  eyePupilBeforeColor: number;
+  birthmarkColor: number;
+  earColor: number;
+  mouthToungueColor: number;
+  legColor: number;
+  footColor: number;
 };
 type SelectedCat = {
   dna: DNA;

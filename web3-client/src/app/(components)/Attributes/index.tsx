@@ -63,15 +63,15 @@ const Attributes: FC<AttributesProps> = ({ dna, updateDna }) => {
           variant={isColorTab ? "solid" : "ghost"}
           onClick={() => toogleTab()}
         >
-          Cat Colors
+          Dog Colors
         </Button>
-        <Button
+        {/* <Button
           colorScheme="blue"
           variant={!isColorTab ? "solid" : "ghost"}
           onClick={() => toogleTab()}
         >
           Cattributes
-        </Button>
+        </Button> */}
       </HStack>
       <Box textAlign="center">
         {isColorTab ? colorSelectors : cattributeSelectors}

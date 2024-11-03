@@ -16,11 +16,20 @@ export const useCatFactory = () => {
 
   const generateRandomCat = useCallback(() => {
     const randomDNA: DNA = {
-      headColor: Math.floor(Math.random() * 89) + 10,
-      mouthColor: Math.floor(Math.random() * 89) + 10,
-      pawsColor: Math.floor(Math.random() * 89) + 10,
-      eyesColor: Math.floor(Math.random() * 89) + 10,
-      collarColor: Math.floor(Math.random() * 89) + 10,
+      // headColor: Math.floor(Math.random() * 89) + 10,
+      // mouthColor: Math.floor(Math.random() * 89) + 10,
+      // pawsColor: Math.floor(Math.random() * 89) + 10,
+      // eyesColor: Math.floor(Math.random() * 89) + 10,
+      // collarColor: Math.floor(Math.random() * 89) + 10,
+      // headColor: Math.floor(Math.random() * 89) + 10,
+      eyePupilColor: Math.floor(Math.random() * 89) + 10,
+      eyePupilBeforeColor: Math.floor(Math.random() * 89) + 10,
+      birthmarkColor: Math.floor(Math.random() * 89) + 10,
+      earColor: Math.floor(Math.random() * 89) + 10,
+      mouthToungueColor: Math.floor(Math.random() * 89) + 10,
+      legColor: Math.floor(Math.random() * 89) + 10,
+      footColor: Math.floor(Math.random() * 89) + 10,
+
       eyesShape: Math.floor(Math.random() * 6) + 1,
       foreheadShape: Math.floor(Math.random() * 5) + 1,
       decorationColor: Math.floor(Math.random() * 89) + 10,

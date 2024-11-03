@@ -1,4 +1,4 @@
-.cat {
+/* .cat {
     position: inherit;
     width: 300px;
     height: 350px;
@@ -12,12 +12,12 @@
     height: 215px;
     left: -25px;
     transform: scale(60%);
-  }
+  } */
   
   /*HEAD:
   *******/
   
-  .head {
+  /* .head {
     position: relative;
   }
   
@@ -28,7 +28,7 @@
     height: 200px;
     border-radius: 50%;
     z-index: -1;
-  }
+  } */
   
   /***EARS***/
   

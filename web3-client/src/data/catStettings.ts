@@ -1,10 +1,18 @@
 export const defaultDNA: DNA = {
   //Colors
-  headColor: 79,
-  mouthColor: 13,
-  pawsColor: 20,
-  eyesColor: 31,
-  collarColor: 25,
+  // headColor: 79,
+  // mouthColor: 13,
+  // pawsColor: 20,
+  // eyesColor: 31,
+  // collarColor: 25,
+
+  eyePupilColor: 21,
+  eyePupilBeforeColor: 11,
+  birthmarkColor: 79,
+  earColor: 79,
+  mouthToungueColor: 13,
+  legColor: 79,
+  footColor: 79,
 
   //Cattributes
   eyesShape: 1,

@@ -3,11 +3,12 @@ import { memo, type FC } from "react";
 import { Box, Card } from "@chakra-ui/react";
 
 import { useAnimation } from "@/hooks/useAnimation";
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 import { getBgColorString, getColorString } from "@/utils/catsUtils";
 
 import { CatBody, CatEars, CatEyes, CatForehead, CatHairs } from "./CatParts";
 import RenderCatInfo from "./RenderCatInfo";
+import { DogHead, DogBody } from "./DogParts";
 
 const getColor = (color: number) => `#${getColorString(color)}`;
 
@@ -16,12 +17,14 @@ const RenderCat: FC<RenderCatProps> = ({ dna, id, generation, isFactory }) => {
     foreheadShape,
     eyesShape,
     animation,
-    headColor,
-    pawsColor,
-    decorationColor,
-    eyesColor,
-    mouthColor,
     backgroundColor,
+    eyePupilColor,
+    eyePupilBeforeColor,
+    birthmarkColor,
+    earColor,
+    mouthToungueColor,
+    legColor,
+    footColor,
   } = dna || {};
 
   const { catAnimation } = useAnimation(animation);
@@ -42,51 +45,23 @@ const RenderCat: FC<RenderCatProps> = ({ dna, id, generation, isFactory }) => {
               : styles.head
           }
         >
-          <section
+          {/* <section
             className={styles.head_background}
             style={{ backgroundColor: getColor(headColor) }}
-          />
-
-          <CatEars
+          /> */}
+          <DogHead
             getColor={getColor}
-            headColor={headColor}
-            pawsColor={pawsColor}
+            eyePupilColor={eyePupilColor}
+            eyePupilBeforeColor={eyePupilBeforeColor}
+            birthmarkColor={birthmarkColor}
+            earColor={earColor}
+            mouthToungueColor={mouthToungueColor}
           />
-
-          <CatForehead
-            getColor={getColor}
-            foreheadShape={foreheadShape}
-            decorationColor={decorationColor}
-          />
-
-          <CatEyes
-            getColor={getColor}
-            eyesShape={eyesShape}
-            eyesColor={eyesColor}
-            animation={animation}
-            catAnimation={catAnimation}
-          />
-
-          <section
-            className={styles.face_body}
-            style={{ backgroundColor: getColor(mouthColor) }}
-          >
-            <div className={styles.nose} />
-            <div className={styles.mouth}>
-              <div className={styles.mouth_upper} />
-              <div className={styles.mouth_lower_right} />
-              <div className={styles.mouth_lower_left} />
-            </div>
-
-            <CatHairs />
-          </section>
         </Box>
-
-        <CatBody
+        <DogBody
           getColor={getColor}
-          dna={dna}
-          animation={animation}
-          catAnimation={catAnimation}
+          legColor={legColor}
+          footColor={footColor}
         />
       </Box>
       <br></br>
