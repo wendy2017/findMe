@@ -58,14 +58,14 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="relative">
+          {/* <div className="relative">
             <Bell className="cursor-pointer text-gray-500" size={24} />
             <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-[0.4rem] py-1 text-xs font-semibold leading-none text-red-100 bg-red-400 rounded-full">
               3
             </span>
-          </div>
+          </div> */}
           <hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
-          <div className="flex items-center gap-3 cursor-pointer">
+          {/* <div className="flex items-center gap-3 cursor-pointer">
             <Image
               // src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/profile.jpg"
               alt="Profile"
@@ -74,7 +74,7 @@ const Navbar = () => {
               className="rounded-full h-full object-cover"
             />
             <span className="font-semibold">Ed Roh</span>
-          </div>
+          </div> */}
         </div>
         <Link href="/settings">
           <Settings className="cursor-pointer text-gray-500" size={24} />

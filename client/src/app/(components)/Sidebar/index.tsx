@@ -2,6 +2,7 @@
 
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsSidebarCollapsed } from "@/state";
+import { isChildRoute } from "@/utils/common";
 import {
   Archive,
   CircleDollarSign,
@@ -31,8 +32,9 @@ const SidebarLink = ({
   isCollapsed,
 }: SidebarLinkProps) => {
   const pathname = usePathname();
+
   const isActive =
-    pathname === href || (pathname === "/" && href === "/projects");
+    isChildRoute(pathname, href) || (pathname === "/" && href === "/projects");
 
   return (
     <Link href={href}>
@@ -121,7 +123,7 @@ const Sidebar = () => {
 
       {/* FOOTER */}
       <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
-        <p className="text-center text-xs text-gray-500">&copy; 2024 Edstock</p>
+        <p className="text-center text-xs text-gray-500">&copy; 2024 Wendy</p>
       </div>
     </div>
   );
