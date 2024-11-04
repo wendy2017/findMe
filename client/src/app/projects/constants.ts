@@ -11,7 +11,7 @@ const projectsSources: ProjectItemType[] = [
     name: "Web3",
     description:
       "Web3 DApp（去中心化应用）是基于区块链技术构建的应用程序，与传统的中心化应用相对。它们利用智能合约和分布式网络，使用户能够直接相互交互，而无需中介",
-    url: "https://web3-dapp-pi.vercel.app",
+    url: "https://onemuzi.xyz",
     src: "/web3.png",
     target: "_blank",
   },
