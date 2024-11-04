@@ -3,7 +3,8 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/projects/biShow",
+        // source: "/projects/biShow",
+        source: "/(.*)",
         headers: [
           {
             key: "Referrer-Policy",
