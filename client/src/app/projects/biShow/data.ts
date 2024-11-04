@@ -1,5 +1,6 @@
 "use client";
 import * as echarts from "echarts/core";
+import isNaN from "lodash/isNaN";
 const colorList = ["#9E87FF", "#73DDFF", "#fe9a8b", "#F56948", "#9E87FF"];
 
 const lineOpts = {
@@ -73,11 +74,11 @@ const mapOpts = {
   // },
   tooltip: {
     trigger: "item",
-    formatter: (p) => {
+    formatter: (p: any) => {
       console.log(3333, p);
 
       let val = p.value;
-      if (window.isNaN(val)) {
+      if (isNaN(val)) {
         val = 0;
       }
       let txtCon = p.name + "<br>" + "<hr>" + "数值 : " + val.toFixed(2);
@@ -110,9 +111,9 @@ const mapOpts = {
           color: "rgb(249, 249, 249)", //省份标签字体颜色
           fontSize: 12,
         },
-        formatter: (p) => {
+        formatter: (p: any) => {
           let val = p.value;
-          if (window.isNaN(val)) {
+          if (isNaN(val)) {
             val = 0;
           }
           //

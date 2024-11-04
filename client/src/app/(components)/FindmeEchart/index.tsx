@@ -51,10 +51,12 @@ const FindmeEchart: React.ForwardRefRenderFunction<MyChartRef, MyChartProps> = (
   }, [cRef, option, mapConfig, chartType]);
   // 监听窗口大小变化重绘
   useEffect(() => {
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", resize);
+      return () => {
+        window.removeEventListener("resize", resize);
+      };
+    }
   }, [option]);
   // 监听高度变化
   useLayoutEffect(() => {

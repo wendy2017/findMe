@@ -3,7 +3,6 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { clone, cloneDeep, findIndex, get, slice } from "lodash";
 import axios from "axios";
 
-import FindmeEchart from "@/app/(components)/FindmeEchart";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +12,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { MyChartRef } from "@/app/(components)/FindmeEchart/echarts.config";
+// import FindmeEchart from "@/app/(components)/FindmeEchart";
 
 import {
   lineOpts,
@@ -21,8 +21,14 @@ import {
   barOpts,
   barBrushedLineOpts,
 } from "./data";
-import { log } from "util";
+import dynamic from "next/dynamic";
 
+const FindmeEchart = dynamic(
+  () => {
+    return import("@/app/(components)/FindmeEchart");
+  },
+  { ssr: false }
+);
 type WordCloudType = {
   name: string;
   value: number;
@@ -94,7 +100,7 @@ const BIPage = () => {
   };
 
   const getWordCloudOpts = () => {
-    const opts = clone(wordCloudOpts);
+    const opts: any = clone(wordCloudOpts);
     opts.series[0].data = wordCloudDatas;
     return opts;
   };
