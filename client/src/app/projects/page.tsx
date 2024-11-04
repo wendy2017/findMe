@@ -4,18 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 const ProjectItem = ({ source }: { source: ProjectItemType }) => (
-  <div className="flex flex-row min-h-72 gap-2 p-4  rounded-md bg-blue-200 hover:bg-blue-100">
+  <div className="flex flex-col min-h-72 gap-2 p-2  rounded-md bg-blue-100 hover:bg-blue-200">
     <Link
       href={source.url}
       target={source.target}
-      className="flex justify-center items-center cursor-pointer"
+      className="h-full flex flex-col  items-center cursor-pointer"
     >
-      <div className="basis-1/2">
-        <div className="text-2xl font-bold">{source.name}</div>
-        <div className="text-lg">{source.description}</div>
-      </div>
-      <div className="basis-1/2 flex justify-center align-middle">
-        <Image src={source.src} alt="bi image" width={120} height={80} />
+      <div className="text-lg font-bold m-2">{source.name}</div>
+      <div className="flex flex-1 items-center  justify-center gap-2">
+        <div className="basis-1/2 ">{source.description}</div>
+        <div className="basis-1/2 flex justify-center align-middle">
+          <Image src={source.src} alt="bi image" width={120} height={80} />
+        </div>
       </div>
     </Link>
   </div>
