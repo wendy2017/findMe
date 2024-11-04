@@ -3,6 +3,10 @@
       {
         "source": "/geo.datav.aliyun/(.*)",
         "headers": [
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer", // 设置不发送引荐来源
+          },
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
           { "key": "Access-Control-Allow-Methods", "value": "GET,DELETE,PATCH,POST,PUT" },
