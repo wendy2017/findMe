@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "https://geo.datav.aliyun.com",
+        "source": "/geo.datav.aliyun/(.*)",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
