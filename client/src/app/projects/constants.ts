@@ -15,13 +15,12 @@ const projectsSources: ProjectItemType[] = [
     src: "/web3.png",
     target: "_blank",
   },
-  // {
-  //   name: "AI",
-  //   description: "AI前端应用，如LLM，agent，待完成 。。。",
-  //   url: "https://dify.ai/",
-  //   src: "/web3.png",
-  //   target: "_blank",
-  // },
+  {
+    name: "AI",
+    description: "AI前端应用，如LLM，agent，待完成 。。。",
+    url: "/ai",
+    src: "/web3.png",
+  },
 ];
 
 export { projectsSources };
