@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const CardPopularProducts = () => {
   const { data, isLoading } = useGetProductsQuery();
-  console.log("data==", data);
 
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
@@ -19,7 +18,7 @@ const CardPopularProducts = () => {
           </h3>
           <hr />
           <div className="overflow-auto h-full">
-            {data?.data?.map((product) => (
+            {data?.map((product) => (
               <div
                 key={product.productId}
                 className="flex items-center justify-between gap-3 px-5 py-7 border-b"

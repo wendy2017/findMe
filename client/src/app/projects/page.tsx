@@ -28,12 +28,12 @@ const Projects = () => {
           <ProjectItem source={item} key={index} />
         ))}
       </div>
-      {/* <div className="relative flex flex-row justify-center align-middle mt-4 border rounded-md bg-[url('/ai.webp')] w-full h-72 bg-cover bg-center">
+      <div className="relative flex flex-row justify-center align-middle mt-4 border rounded-md bg-[url('/ai.webp')] w-full h-72 bg-cover bg-center">
         <div className="absolute bottom-2">
           <h1 className="text-2xl font-bold">AI相关</h1>
           <div className="text-lg">AI前端应用，如LLM，agent，待完成 。。。</div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
