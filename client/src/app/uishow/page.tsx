@@ -26,15 +26,16 @@ export default function UIShow() {
         grabCursor={true}
         effect={"coverflow"}
         centeredSlides={true}
+        // spaceBetween={30}
         autoplay={{
-          delay: 1000,
+          delay: 10000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
         breakpoints={{
           640: {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 20,
           },
           768: {
             slidesPerView: 2,
@@ -49,8 +50,9 @@ export default function UIShow() {
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 100,
-          modifier: 2.5,
+          depth: 120,
+          scale: 0.9,
+          modifier: 1.0,
           slideShadows: true,
         }}
         className="mySwiper flex  w-full h-full  justify-center items-center container mx-auto "
@@ -68,7 +70,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://plus.unsplash.com/premium_photo-1682377521362-c4e8be6e62b4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full h-full"
             />
@@ -78,7 +80,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://images.unsplash.com/photo-1569873175476-10aa45523ab8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJvbnNhaXxlbnwwfHwwfHx8MA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full h-full"
             />
@@ -88,7 +90,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://images.unsplash.com/photo-1632161286719-5afe9b5d954b?q=80&w=1490&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full h-full"
             />
@@ -98,7 +100,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://images.unsplash.com/photo-1430024759857-660f9aa67c47?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full h-full"
             />
@@ -108,7 +110,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://plus.unsplash.com/premium_photo-1668073438756-76fe6a233c56?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full items-center jusc min-h-full"
             />
@@ -118,7 +120,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className="rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center">
             <img
-              src="https://plus.unsplash.com/premium_photo-1682542226584-e776098d5ea9?q=80&w=1404&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full h-full"
             />
@@ -128,7 +130,7 @@ export default function UIShow() {
         <SwiperSlide>
           <div className=" rounded-md flex w-full p-12 md:p-0 h-100 justify-center items-center ">
             <img
-              src="https://media.istockphoto.com/id/1175022967/photo/bougainvillea-bonsai-plant-pune.jpg?s=1024x1024&w=is&k=20&c=6Jft-IcCZ7wdiJpaAcX7i1ATHnS5l12msVFVxiHBBdA="
+              src="https://images.unsplash.com/photo-1706148881913-350e148ca6a6?q=full&p-12 md:p-0w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
               className="relative rounded-lg object-cover flex w-full min-h-full"
             />
